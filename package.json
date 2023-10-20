@@ -69,6 +69,7 @@
     "lint-staged"
   ],
   "dependencies": {
+    "@ant-design/icons": "^5.2.6",
     "antd": "^4.19.3",
     "axios": "^0.19.2",
     "codemirror": "^5.39.2",

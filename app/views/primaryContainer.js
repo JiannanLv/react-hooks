@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Loadable from "react-loadable";
-import { Icon } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
 
 //按需加载组件
 const TestModule = Loadable({
   loader: () => import("./TestModule").then((M) => M.default),
-  loading: () => <Icon className="loading" type="loading" />,
+  loading: () => <LoadingOutlined className="loading" />,
 });
 const mapStateToProps = (store) => {
   const { common } = store;
