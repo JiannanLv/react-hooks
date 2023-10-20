@@ -66,15 +66,6 @@ const config = {
       "node_modules/react-router-dom/umd/react-router-dom.min.js"
     ),
     redux: path.join(process.cwd(), "node_modules/redux/dist/redux.min.js"),
-    "echarts-liquidfill": path.join(
-      process.cwd(),
-      "node_modules/echarts-liquidfill/dist/echarts-liquidfill.min.js"
-    ),
-    "echarts-wordcloud": path.join(
-      process.cwd(),
-      "node_modules/echarts-wordcloud/dist/echarts-wordcloud.min.js"
-    ),
-    // antd: path.join(process.cwd(), "node_modules/antd/"), //dist/antd.min.js
     "seamless-immutable": path.join(
       process.cwd(),
       "node_modules/seamless-immutable/seamless-immutable.production.min.js"
