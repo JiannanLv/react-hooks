@@ -1,0 +1,238 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* {
+  // user-select: none;
+  // -moz-user-select: none;
+  // -webkit-user-select: none;
+  // -ms-user-select: none;
+}
+input,
+textarea {
+  user-select: text;
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+}
+html {
+  color: #53585f;
+  height: 100%;
+}
+html,
+input,
+textarea {
+  color: #53585f;
+}
+body {
+  overflow: hidden;
+  height: 100%;
+  font-family: "Microsoft YaHei";
+}
+body,
+td,
+th {
+  font-size: 13px;
+  /*font-family: simhei, Arial;*/
+  font-family: "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+blockquote,
+table,
+iframe,
+p,
+img {
+  padding: 0;
+  margin: 0;
+}
+article,
+section,
+hgroup,
+header,
+footer,
+nav {
+  display: block;
+}
+div,
+p {
+  display: block;
+}
+img {
+  border: none;
+}
+ul,
+ol,
+dl {
+  list-style: none;
+}
+fieldset,
+img {
+  border: 0;
+}
+button {
+  cursor: pointer;
+}
+textarea {
+  resize: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var,
+optgroup {
+  font-style: normal;
+  font-weight: normal;
+}
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+a {
+  color: #ed4441;
+  text-decoration: none;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited,
+a:hover {
+  cursor: pointer;
+}
+a:active,
+a:focus {
+  outline: 0;
+}
+input,
+button,
+textarea {
+  border: none;
+  outline: none;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  outline: 0 none;
+}
+input::-ms-clear {
+  display: none;
+}
+input::-ms-reveal {
+  display: none;
+}
+.clearfix:after {
+  clear: both;
+  content: "";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+.clearfix {
+  display: inline-block;
+}
+* + html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+.clearfloat {
+  display: inline-block;
+}
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
+}
+h1 {
+  font-size: 20px;
+}
+h2 {
+  font-size: 16px;
+}
+h3 {
+  font-size: 16px;
+}
+h4 {
+  font-size: 14px;
+}
+h5 {
+  font-size: 13px;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: none;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #ccc;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #ccc;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #ccc;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #ccc;
+}
+/*----------------reset antd modal css by ui----------------*/
+.ant-modal {
+  .ant-modal-close-x {
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    color: #fff;
+  }
+  .ant-modal-header {
+    padding: 5px 24px;
+    // background: linear-gradient(to right, rgb(13, 29, 108), rgb(102, 51, 153));
+    background: #252b3d;
+  }
+  .ant-modal-title {
+    color: #fff;
+  }
+}

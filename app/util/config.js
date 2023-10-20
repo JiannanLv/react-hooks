@@ -1,0 +1,26 @@
+const config = {
+  PREFIX: "Dashboard",
+  API_REQUEST_BASE_URL: "/sst-services",
+  API_REQUEST_CONTENT_TYPE: "application/json",
+  API_REQUEST_TIMEOUT: 50000,
+  API_REQUEST_HEADERS: undefined,
+  API_SUCCESS_CODE: 200,
+  API_EXPIRED_CODE: "130004",
+  API_RESPONSE_ERROR_METHOD: undefined,
+  IS_ERROR_MESSAGE: false,
+  EXPIRED_TO_URL: "/#/login?type=timeout",
+  EXPIRED_MESSAGE: "鉴权失效，需要重新登录",
+  LOGIN_URL: "",
+  LIST_DATA_PARAMETER: "records",
+  CURRENT_PAGE_PARAMETER: "currentPage",
+  PAGE_SIZE_PARAMETER: "pageSize",
+  USERINFO_STORAGE: "cookie",
+  LOGIN_API: undefined,
+  LOGOUT_API: undefined,
+  GET_PERMISSION_API: undefined,
+  LAYOUT_LOGO_URL: undefined,
+  LAYOUT_MIN_LOGO_URL: undefined,
+  STORE: undefined,
+};
+
+export { config };

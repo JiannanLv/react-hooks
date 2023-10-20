@@ -1,0 +1,166 @@
+{
+  "name": "visualization-engine-ty",
+  "version": "1.0.0",
+  "description": "visualization-engine-ty",
+  "keywords": [
+    "react",
+    "redux",
+    "redux-saga",
+    "webpack",
+    "react-router",
+    "visualization-engine-ty"
+  ],
+  "license": "GPL",
+  "engines": {
+    "node": ">=4.5.0",
+    "yarn": ">=0.20.3",
+    "npm": "3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "clean": "rimraf dist && rimraf lib",
+    "compile": "node build/scripts/compile",
+    "analysis": "webpack --config ./build/config/webpack.config.js --profile --json > stats.json",
+    "babel:amd": "babel -d ./js ./js",
+    "build:amd": "cross-env NODE_ENV=production webpack --config ./build/config/webpack.amd.js --color",
+    "dll": "cross-env NODE_ENV=production webpack --config ./build/config/webpack.lib.js --colors",
+    "start": "node ./build/scripts/dev-server --ignore dist --ignore coverage --ignore src --max-old-space-size=2048",
+    "deploy": "npm run clean && npm run dll && npm run compile",
+    "deploy:dev": "better-npm-run deploy:dev",
+    "deploy:prod": "better-npm-run deploy:prod",
+    "deploy:server": "npm install && better-npm-run deploy:server",
+    "build:test": "rimraf server && mkdir server && npm run deploy:prod && cp-cli ./dist ./server/dashboard",
+    "deploy:test": "cross-env NODE_ENV=production node ./deploy-server.js --name dashboard"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": "lint:code",
+    "src/**/*.{scss,css}": "lint:style"
+  },
+  "betterScripts": {
+    "deploy:dev": {
+      "command": "npm run deploy",
+      "env": {
+        "NODE_ENV": "development",
+        "DEBUG": "app:*"
+      }
+    },
+    "deploy:prod": {
+      "command": "npm run deploy",
+      "env": {
+        "NODE_ENV": "production",
+        "DEBUG": "app:*"
+      }
+    },
+    "deploy:server": {
+      "command": "rimraf server && mkdir server && npm run deploy:prod && cp-cli ./dist ./server/dashboard && pm2 start ./deploy-server.js --name dashboard",
+      "env": {
+        "NODE_ENV": "production",
+        "DEBUG": "app:*"
+      }
+    }
+  },
+  "pre-commit": [
+    "lint-staged"
+  ],
+  "dependencies": {
+    "antd": "^4.19.3",
+    "axios": "^0.19.2",
+    "codemirror": "^5.39.2",
+    "crypto": "^1.0.1",
+    "echarts": "^4.8.0",
+    "echarts-liquidfill": "2.0.3",
+    "echarts-wordcloud": "1.1.3",
+    "fs": "0.0.1-security",
+    "highcharts-3d": "^0.1.7",
+    "html2canvas": "^1.0.0-alpha.12",
+    "http-proxy-middleware": "^0.18.0",
+    "js-cookie": "^3.0.1",
+    "jsencrypt": "^3.3.2",
+    "moment": "2.22.0",
+    "prop-types": "15.5.8",
+    "react": "^17.0.2",
+    "react-codemirror2": "^7.2.1",
+    "react-color": "^2.14.1",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-dom": "^17.0.2",
+    "react-highcharts": "^16.0.2",
+    "react-hymapgl": "^1.0.4",
+    "react-loadable": "^5.5.0",
+    "react-motion": "^0.5.2",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "redux": "^4.1.2",
+    "redux-batched-actions": "^0.3.0",
+    "redux-saga": "0.16.0",
+    "redux-undo": "^1.0.1",
+    "requirejs": "^2.3.6",
+    "seamless-immutable": "7.1.3",
+    "whatwg-fetch": "^2.0.4"
+  },
+  "devDependencies": {
+    "add-asset-html-webpack-plugin": "^3.0.0-0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.17.0",
+    "babel-eslint": "8.1.1",
+    "babel-jest": "20.0.0",
+    "babel-loader": "7.1.2",
+    "babel-plugin-dynamic-import-webpack": "^1.1.0",
+    "babel-plugin-import": "1.1.1",
+    "babel-plugin-istanbul": "3.0.0",
+    "babel-plugin-react-intl": "2.3.1",
+    "babel-plugin-syntax-dynamic-import": "6.18.0",
+    "babel-plugin-transform-decorators-legacy": "1.3.4",
+    "babel-plugin-transform-runtime": "6.15.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-react": "6.11.1",
+    "babel-preset-stage-0": "6.3.13",
+    "babel-runtime": "6.11.6",
+    "better-npm-run": "0.0.13",
+    "compression": "1.6.2",
+    "cp-cli": "^1.1.2",
+    "cross-env": "^5.1.5",
+    "css-loader": "0.28.9",
+    "debug": "2.2.0",
+    "eslint": "4.17.0",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-config-hyfe": "0.0.9",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-config-standard-react": "4.0.0",
+    "eslint-plugin-babel": "4.0.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-promise": "3.0.0",
+    "eslint-plugin-react": "^7.8.2",
+    "eslint-plugin-standard": "2.0.0",
+    "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^5.1.0",
+    "fs-extra": "1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "imports-loader": "0.7.0",
+    "json-loader": "0.5.4",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "lint-staged": "3.3.1",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.9.0",
+    "optimize-css-assets-webpack-plugin": "^4.0.0",
+    "postcss-loader": "^3.0.0",
+    "pre-commit": "1.2.2",
+    "rimraf": "2.5.4",
+    "sass-loader": "6.0.6",
+    "style-loader": "0.20.1",
+    "stylelint": "7.10.1",
+    "stylelint-config-standard": "16.0.0",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "url-loader": "0.6.2",
+    "webpack": "4.25.1",
+    "webpack-cli": "3.2.1",
+    "webpack-dev-middleware": "3.1.3",
+    "webpack-hot-middleware": "2.22.1"
+  }
+}

@@ -1,0 +1,177 @@
+// {
+//   "parser": "babel-eslint",
+//   "extends": [
+//     "airbnb",
+//     "standard",
+//     "standard-react"
+//   ],
+//   "plugins": [
+//     "babel",
+//     "react",
+//     "promise"
+//   ],
+//   "env": {
+//     "browser" : true
+//   },
+//   "globals": {
+//     "__DEV__"      : false,
+//     "__PROD__"     : false,
+//     "__DEV_PROD__" : false
+//   },
+//   "rules": {
+//     "no-param-reassign": "warn",
+//     "space-before-function-paren": ["error", "never"],
+//     "keyword-spacing": ["error", {
+//       "overrides": {
+//         "if": { "after": false },
+//         "for": { "after": false },
+//         "while": { "after": false }
+//       }
+//     }],
+//     "no-debugger": "warn",
+//     "valid-jsdoc": ["warn", {
+//       "requireReturn": false
+//     }],
+//     "jsx-a11y/no-static-element-interactions": false,
+//     "jsx-a11y/click-events-have-key-events": false,
+//     "import/no-unresolved": false,
+//     "import/extensions": false,
+//     "linebreak-style": ["error", "windows"],
+//     # ------------------------------------- REACT Specific -------------------------------------
+//     # https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md
+//     "react/prefer-stateless-function": [0],
+//     # https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md
+//     "react/forbid-prop-types": [1, {
+//       "forbid": [ # This rule encourages prop types that more specifically document their usage.
+//         'any',
+//         'array', # use arrayOf instead (https://facebook.github.io/react/docs/typechecking-with-proptypes.html)
+//         'object' # use shape instead (https://facebook.github.io/react/docs/typechecking-with-proptypes.html)
+//       ]
+//     }],
+//     # https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-find-dom-node.md
+//     "react/no-find-dom-node": [0],
+//     # https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-children-prop.md
+//     "react/no-children-prop": [0],
+//     # https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md
+//     "react/jsx-boolean-value": [2, "always"],
+//     # https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
+//     "react/jsx-filename-extension": [0],
+//     # https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md
+//     "react/jsx-indent": [0],
+//     # https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md
+//     "react/sort-comp": [2, {
+//       "order": [
+//         'static-methods',
+//         'lifecycle',
+//         'everything-else',
+//         'render'
+//       ],
+//       "groups": {
+//         "lifecycle": [
+//           'displayName',
+//           'propTypes',
+//           'contextTypes',
+//           'childContextTypes',
+//           'mixins',
+//           'statics',
+//           'defaultProps',
+//           'constructor',
+//           'getDefaultProps',
+//           'getInitialState',
+//           'state',
+//           'getChildContext',
+//           'componentWillMount',
+//           'componentDidMount',
+//           'componentWillReceiveProps',
+//           'shouldComponentUpdate',
+//           'componentWillUpdate',
+//           'componentDidUpdate',
+//           'componentWillUnmount'
+//         ]
+//       }
+//     }]
+//   }
+// }
+
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "amd": true
+  },
+  "extends": ["airbnb/base", "eslint:recommended", "hyfe"],
+  "parser": "babel-eslint",
+  "globals": {
+    "$": true,
+    "_data": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true,
+      "templateStrings": true,
+      "superInFunctions": true,
+      "spread": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": ["react", "import", "react"],
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./build/config/webpack.config.js"
+      }
+    }
+  },
+  "ecmaFeatures": {
+    "experimentalObjectRestSpread": true,
+    "jsx": true,
+    "templateStrings": true,
+    "superInFunctions": true,
+    "spread": true
+  },
+  "rules": {
+    "indent": ["error", 4],
+    "no-invalid-this": false,
+    "import/no-unresolved": false,
+    "import/extensions": false,
+    "linebreak-style": ["error", "unix"],
+    //        "quotes": ["warn", "single"],
+    "semi": ["error", "always"],
+    //        "no-console": "off",
+    //        "prefer-template": "off",
+    //        "consistent-return": "off",
+    //        "no-param-reassign": "off",
+    //        "comma-dangle": ["error", "never"],
+    "padded-blocks": [
+      "error",
+      {
+        "switches": "always",
+        "classes": "never",
+        "blocks": "always"
+      }
+    ],
+    //        "no-underscore-dangle": ["error", {
+    //            "allow": ["_data", "_result", "_initialState"],
+    //            "allowAfterThis": true
+    //        }],
+    //        "space-infix-ops": ["error", {
+    //            "int32Hint": false
+    //        }],
+    //        "space-before-blocks": ["error"],
+    //        "no-empty-function": ["error"],
+    //        "key-spacing": ["error"],
+    //        "arrow-spacing": ["error"],
+    //        "quote-props": ["error", "consistent"],
+    //        "jsx-quotes": ["error", "prefer-single"],
+    //        "react/jsx-uses-vars": 2,
+    //        "react/jsx-uses-react": 2,
+    "max-len": [2, 120],
+    "react/jsx-indent-props": [2, 4],
+    "react/forbid-prop-types": [2, { "forbid": ["any"] }]
+    //        "no-debugger": 2
+  }
+}

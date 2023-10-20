@@ -1,0 +1,191 @@
+/*定义整体layout的样式, 直接从antd官网copy的, 稍微修改了一些*/
+@font-face {
+  font-family: "AgencyFB";
+  src: url("/dashboard/fonts/font/AgencyFB.ttf");
+}
+@font-face {
+  font-family: "Digiface";
+  src: url("/dashboard/fonts/font/Digiface.ttf");
+}
+@font-face {
+  font-family: "MStiffHeiHKS";
+  src: url("/dashboard/fonts/font/MStiffHei.ttf");
+}
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.loading {
+  color: #41a8e7;
+  font-size: 50px;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  position: absolute;
+  top: 50%;
+}
+
+::-webkit-scrollbar {
+  min-width: 1px;
+  min-height: 1px;
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  width: 3px;
+  height: auto;
+  border-radius: 5px;
+  background: #edeff1;
+  padding: 0 2px;
+}
+::-webkit-scrollbar-thumb {
+  width: 6px;
+  border-radius: 5px;
+  background: #41a8e7;
+}
+
+input.regular[readonly] {
+  padding: 0.25em 0.5em;
+  background-color: #41a8e7;
+  border: 0;
+  color: rgba(39, 54, 78, 0.4);
+}
+textarea.regular[readonly] {
+  padding: 0.25em 0.5em;
+  background-color: #41a8e7;
+  border: 0;
+  color: rgba(39, 54, 78, 0.4);
+}
+
+
+// 全局动画
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateContrary {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes opactiy {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes breathing {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+@keyframes translateX {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(400%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes translateY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(400%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes widthRatio {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+@keyframes heightRatio {
+  0% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+
+//慢速旋转
+.TEAnimationSlowRotation {
+  animation: rotate 7s linear 0s infinite;
+}
+//普通旋转
+.TEAnimationOrdinaryRotation {
+  animation: rotate 5s linear 0s infinite;
+}
+//快速旋转
+.TEAnimationFastRotation {
+  animation: rotate 3s linear 0s infinite;
+}
+.TEAnimationSlowRotationContrary {
+  animation: rotateContrary 7s linear 0s infinite;
+}
+.TEAnimationOrdinaryRotationContrary {
+  animation: rotateContrary 5s linear 0s infinite;
+}
+.TEAnimationFastRotationContrary {
+  animation: rotateContrary 3s linear 0s infinite;
+}
+//渐变透明
+.TEAnimationGradualChangeTransparency {
+  animation: opactiy 4s linear 0s infinite;
+}
+//呼吸效果
+.TEAnimationRespiratoryEffect {
+  animation: breathing 4s ease 0s infinite;
+}
+//左右位移
+.TEAnimationShiftFromLeftToRight {
+  animation: translateX 4s ease 0s infinite;
+}
+//上下位移
+.TEAnimationDisplacementFromTopToBottom {
+  animation: translateY 4s ease 0s infinite;
+}
+//左右展开
+.TEAnimationExpandFromLeftToRight {
+  animation: widthRatio 3s ease 0s infinite;
+}
+//上下展开
+.TEAnimationFromTopToBottom {
+  animation: heightRatio 3s ease 0s infinite;
+}

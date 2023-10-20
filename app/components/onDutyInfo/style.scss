@@ -1,0 +1,75 @@
+.on-duty-info {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  .cover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+  .on-duty-info-table.scroll {
+    overflow: auto;
+  }
+  .on-duty-info-table {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    .animation-node {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .word-brank {
+    color: rgba(205, 225, 253, 0.8);
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "MicrosoftYaHei";
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    width: 25%;
+    &:nth-child(2) {
+      width: 50%;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .group {
+    background: transparent;
+    border-bottom: 1px solid rgba(205, 225, 253, 0.1);
+    height: 28px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    box-sizing: border-box;
+  }
+}
+.layout-main {
+  .TE_table {
+    .TE-table-content {
+      .group {
+        pointer-events: none;
+      }
+    }
+  }
+}
