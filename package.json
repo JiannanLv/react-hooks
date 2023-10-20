@@ -35,6 +35,9 @@
     "build:test": "rimraf server && mkdir server && npm run deploy:prod && cp-cli ./dist ./server/dashboard",
     "deploy:test": "cross-env NODE_ENV=production node ./deploy-server.js --name dashboard"
   },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
   "lint-staged": {
     "src/**/*.{js,jsx}": "lint:code",
     "src/**/*.{scss,css}": "lint:style"
@@ -157,6 +160,7 @@
     "webpack": "4.25.1",
     "webpack-cli": "3.2.1",
     "webpack-dev-middleware": "3.1.3",
-    "webpack-hot-middleware": "2.22.1"
+    "webpack-hot-middleware": "2.22.1",
+    "yorkie": "^2.0.0"
   }
 }
