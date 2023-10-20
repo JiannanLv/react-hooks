@@ -5,7 +5,7 @@ const webpackConfig = require("../config/webpack.config");
 const project = require("../config/project.config");
 
 // Wrapper around webpack to promisify its compiler and supply friendly logging
-const webpackCompiler = webpackConfig =>
+const webpackCompiler = (webpackConfig) =>
   new Promise((resolve, reject) => {
     const compiler = webpack(webpackConfig);
 
@@ -37,22 +37,22 @@ const compile = () => {
   debug("Starting compiler.");
   return Promise.resolve()
     .then(() => webpackCompiler(webpackConfig))
-    .then(stats => {
+    .then((stats) => {
       if (stats.warnings.length && project.compiler_fail_on_warning) {
         throw new Error(
           'Config set to fail on warning, exiting with status code "1".'
         );
       }
       debug("Copying static assets to dist folder.");
-      fs.copySync(
-        project.paths.public(),
-        project.paths.dist() + "/dashboard"
-      );
+      // fs.copySync(
+      //   project.paths.public()
+      //   // project.paths.dist() + "/dashboard"
+      // );
     })
     .then(() => {
       debug("Compilation completed successfully.");
     })
-    .catch(err => {
+    .catch((err) => {
       debug("Compiler encountered an error.", err);
       process.exit(1);
     });

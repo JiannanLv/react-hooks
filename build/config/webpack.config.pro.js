@@ -183,6 +183,15 @@ const webpackConfig = {
       publicPath: `/${project.server_name}/scripts`,
     }),
   ],
+  performance: {
+    hints: "warning", // 枚举 false关闭
+    maxEntrypointSize: 100000000, // 最大入口文件大小
+    maxAssetSize: 100000000, // 最大资源文件大小
+    assetFilter: function (assetFilename) {
+      //只给出js文件的性能提示
+      return assetFilename.endsWith(".js");
+    },
+  },
 };
 
 // url-loader中使用option时候避免警告信息
