@@ -10,7 +10,7 @@
     "react-router",
     "visualization-engine-ty"
   ],
-  "license": "GPL",
+  "license": "UNLICENSED",
   "engines": {
     "node": ">=4.5.0",
     "yarn": ">=0.20.3",
