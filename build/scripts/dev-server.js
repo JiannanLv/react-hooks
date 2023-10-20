@@ -48,7 +48,7 @@ app.use(
   })
 );
 
-app.use("/dashboard", express.static(project.paths.public()));
+// app.use("/dashboard", express.static(project.paths.public()));
 
 app.use("*", (req, res, next) => {
   const filename = path.join(compiler.outputPath, "index.html");
