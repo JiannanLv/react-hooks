@@ -39,8 +39,8 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": "lint:code",
-    "src/**/*.{scss,css}": "lint:style"
+    "app/**/*.{js,jsx}": "lint:code",
+    "app/**/*.{scss,css}": "lint:style"
   },
   "betterScripts": {
     "deploy:dev": {
