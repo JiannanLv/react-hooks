@@ -39,8 +39,13 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "app/**/*.{js,jsx}": "lint:code",
-    "app/**/*.{scss,css}": "lint:style"
+    "app/**/*.{scss,css}": [
+      "stylelint --config ./.stylelintrc --fix"
+    ],
+    "app/**/*.{js,json,css}": [
+      "pretty-quick --staged",
+      "eslint -c ./.eslintrc.js --fix --ext .jsx,.js"
+    ]
   },
   "betterScripts": {
     "deploy:dev": {
