@@ -1,0 +1,21 @@
+.header {
+  box-shadow: 0 4px 6px #ccc;
+  height: 64px;
+  line-height: 64px;
+  padding-left: 16px;
+  width: 100%;
+
+  > svg {
+    height: 40px;
+    vertical-align: middle;
+    width: 40px;
+  }
+  .logo-sapn {
+    cursor: default;
+    color: #21242b;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+}

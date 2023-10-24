@@ -1,0 +1,44 @@
+.nav-menu {
+  box-shadow: 0 4px 6px #ccc;
+  padding: 16px 0 0 0;
+  .nav-menu-title {
+    color: #6e7588;
+    cursor: default;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 30px;
+    padding-left: 24px;
+  }
+  .nav-menu-ul {
+    li {
+      color: #8c8f97;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 30px;
+      padding-left: 24px;
+      &:hover {
+        background: #F4F5F7;
+      }
+    }
+    .nav-menu-group-title {
+      cursor: pointer;
+      color: #1a1d23;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 30px;
+      padding-left: 24px;
+      position: relative;
+      .anticon {
+        position: absolute;
+        right: 8px;
+        top: 7px;
+      }
+    }
+    .nav-menu-group {
+      display: none;
+      &.show {
+        display: block;
+      }
+    }
+  }
+}

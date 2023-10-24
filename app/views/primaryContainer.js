@@ -1,14 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Switch, Route, Redirect } from "react-router-dom";
-import Loadable from "react-loadable";
-import { LoadingOutlined } from "@ant-design/icons";
+import routes from "@/routes";
 
-//按需加载组件
-const TestModule = Loadable({
-  loader: () => import("./TestModule").then((M) => M.default),
-  loading: () => <LoadingOutlined className="loading" />,
-});
 const mapStateToProps = (store) => {
   const { common } = store;
   return { common };
@@ -16,17 +10,29 @@ const mapStateToProps = (store) => {
 
 @connect(mapStateToProps)
 export default class PrimaryContainer extends Component {
-  componentDidMount() {}
+  renderRoutes = (path, routesList) => {
+    routesList = routesList || routes;
+    const redirect = routesList.find((x) => x.redirect);
+    return (
+      <Switch>
+        {routesList.map((x) => {
+          return (
+            <Route
+              path={`${path}/${x.path}`}
+              key={x.path}
+              component={() => (
+                <x.component routes={x.children} path={`${path}/${x.path}`} />
+              )}
+            />
+          );
+        })}
+        {redirect ? <Redirect to={`${path}/${redirect.path}`} /> : null}
+      </Switch>
+    );
+  };
   render() {
     const { match } = this.props;
-    // path={`${match.path}/:spaceId/layout/:pageId`}
-    return (
-      <React.Fragment>
-        <Switch>
-          <Route path={`${match.path}/test`} component={TestModule} />
-          <Redirect to={`${match.url}/test`} />
-        </Switch>
-      </React.Fragment>
-    );
+    console.log(match, "match");
+    return <React.Fragment>{this.renderRoutes(match.path)}</React.Fragment>;
   }
 }

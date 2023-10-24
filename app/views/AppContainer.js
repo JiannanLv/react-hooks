@@ -26,13 +26,12 @@ class AppContainer extends Component {
    */
   render() {
     const { store } = this.props;
-    console.log(store, "store");
     return (
       <ReduxProvider store={store}>
         <ConnectedRouter history={store.history}>
           <Switch>
-            <Route path="/package" component={PrimaryContainer} />
-            <Redirect to="/package" />
+            <Route path="/react" component={PrimaryContainer} />
+            <Redirect to="/react" />
           </Switch>
         </ConnectedRouter>
       </ReduxProvider>

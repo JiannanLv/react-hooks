@@ -1,0 +1,17 @@
+.home-layout {
+  height: 100%;
+  width: 100%;
+  .home-layout-content {
+    height: calc(100% - 64px);
+    .nav-menu {
+      float: left;
+      height: 100%;
+      width: 256px;
+    }
+    .home-content {
+      float: left;
+      height: 100%;
+      width: calc(100% - 256px);
+    }
+  }
+}
