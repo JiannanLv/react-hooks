@@ -1,0 +1,108 @@
+.workflow-design {
+  padding: 8px;
+  width: 100%;
+  .workflow-design-box-scale {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-width: min-content;
+    .end-node {
+      border-radius: 50%;
+      font-size: 14px;
+      color: rgba(25, 31, 37, 0.4);
+      text-align: left;
+      .end-node-circle {
+        width: 10px;
+        height: 10px;
+        margin: auto;
+        border-radius: 50%;
+        background: #ccc;
+      }
+      .end-node-text {
+        margin-top: 5px;
+        text-align: center;
+      }
+    }
+  }
+  .node-wrap {
+    display: inline-flex;
+    width: 100%;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    .node-wrap-box {
+      display: inline-flex;
+      flex-direction: column;
+      position: relative;
+      width: 220px;
+      min-height: 72px;
+      flex-shrink: 0;
+      background: rgb(255, 255, 255);
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+      &::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        border-style: solid;
+        border-width: 8px 6px 4px;
+        border-color: rgb(202, 202, 202) transparent transparent;
+      }
+      &.start-node {
+        &::before {
+          content: none;
+        }
+      }
+      .title {
+        height: 24px;
+        line-height: 24px;
+        color: #fff;
+        padding-left: 16px;
+        padding-right: 30px;
+        border-radius: 4px 4px 0 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        > span {
+          vertical-align: middle;
+          &.anticon {
+            height: 24px;
+            line-height: 26px;
+            margin-right: 4px;
+          }
+        }
+      }
+      .content {
+        position: relative;
+        padding: 16px;
+      }
+    }
+  }
+  .add-branch {
+    background: #ecf9e6;
+    color: #58b92c;
+    border: 1px solid #a5dd8c;
+    font-size: 13px;
+    font-weight: bold;
+    justify-content: center;
+    padding: 0 10px;
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: center center;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+  }
+}

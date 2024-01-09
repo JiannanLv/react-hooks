@@ -6,6 +6,10 @@ const TestModule = Loadable({
   loader: () => import("@/views/TestModule").then((M) => M.default),
   loading: () => <LoadingOutlined className="loading" />,
 });
+const WorkFlow = Loadable({
+  loader: () => import("@/views/WorkFlow").then((M) => M.default),
+  loading: () => <LoadingOutlined className="loading" />,
+});
 const Home = Loadable({
   loader: () => import("@/views/Home").then((M) => M.default),
   loading: () => <LoadingOutlined className="loading" />,
@@ -36,6 +40,11 @@ const routes = [
         redirect: false,
       },
     ],
+  },
+  {
+    path: "workFlow",
+    component: WorkFlow,
+    redirect: false,
   },
   {
     path: "test",

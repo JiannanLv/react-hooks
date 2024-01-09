@@ -14,7 +14,7 @@
     "indentation": null,
     "number-leading-zero": null,
     "number-no-trailing-zeros": null,
-    "rule-empty-line-before": "always-multi-line",
+    "rule-empty-line-before": "never",
     "selector-combinator-space-after": null,
     "selector-list-comma-newline-after": null,
     "selector-pseudo-element-colon-notation": null,
