@@ -58,6 +58,18 @@
         border-width: 8px 6px 4px;
         border-color: rgb(202, 202, 202) transparent transparent;
       }
+      &::after {
+        pointer-events: none;
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        border-radius: 4px;
+        transition: all 0.1s;
+      }
       &.start-node {
         &::before {
           content: none;
@@ -85,6 +97,12 @@
       .content {
         position: relative;
         padding: 16px;
+      }
+      &:hover {
+        &::after {
+          border: 1px solid #3296fa;
+          box-shadow: 0 0 6px 0 rgba(50, 150, 250, 0.3);
+        }
       }
     }
   }

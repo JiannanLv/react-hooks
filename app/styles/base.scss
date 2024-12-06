@@ -4,12 +4,6 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-* {
-  // user-select: none;
-  // -moz-user-select: none;
-  // -webkit-user-select: none;
-  // -ms-user-select: none;
-}
 input,
 textarea {
   user-select: text;
@@ -27,7 +21,7 @@ textarea {
   color: #53585f;
 }
 body {
-  overflow: hidden;
+  // overflow: hidden;
   height: 100%;
   font-family: "Microsoft YaHei";
 }
@@ -35,9 +29,7 @@ body,
 td,
 th {
   font-size: 13px;
-  /*font-family: simhei, Arial;*/
-  font-family: "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei",
-    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 body,
 div,
@@ -202,7 +194,6 @@ textarea:-webkit-autofill,
 select:-webkit-autofill {
   background-color: none;
 }
-
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: #ccc;
@@ -219,7 +210,6 @@ input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
   color: #ccc;
 }
-/*----------------reset antd modal css by ui----------------*/
 .ant-modal {
   .ant-modal-close-x {
     width: 33px;
@@ -229,7 +219,6 @@ textarea:-ms-input-placeholder {
   }
   .ant-modal-header {
     padding: 5px 24px;
-    // background: linear-gradient(to right, rgb(13, 29, 108), rgb(102, 51, 153));
     background: #252b3d;
   }
   .ant-modal-title {

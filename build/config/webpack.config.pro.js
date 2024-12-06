@@ -16,7 +16,7 @@ const webpackConfig = {
   mode: project.env,
   devtool: false,
   resolve: {
-    extensions: [".js", ".jsx", ".json"],
+    extensions: [".js", ".jsx", ".json", ".mjs"],
     alias: Object.assign(project.compiler_vendors, {
       "@": project.paths.client(),
     }),

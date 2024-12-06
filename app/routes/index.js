@@ -23,6 +23,10 @@ const UseCallback = Loadable({
     import("@/containers/React/Hooks/UseCallback").then((M) => M.default),
   loading: () => <LoadingOutlined className="loading" />,
 });
+const HtmlToWord = Loadable({
+  loader: () => import("@/views/PreResearch/HtmlToWord").then((M) => M.default),
+  loading: () => <LoadingOutlined className="loading" />,
+});
 const routes = [
   {
     path: "home",
@@ -32,12 +36,17 @@ const routes = [
       {
         path: "use",
         component: Use,
-        redirect: true,
+        redirect: false,
       },
       {
         path: "useCallback",
         component: UseCallback,
         redirect: false,
+      },
+      {
+        path: "htmlToWord",
+        component: HtmlToWord,
+        redirect: true,
       },
     ],
   },

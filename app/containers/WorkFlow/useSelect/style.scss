@@ -1,3 +1,48 @@
 .use-select {
-  color: #fff;
+  .sc-user-select {
+    display: flex;
+    .sc-user-select-left {
+      width: 200px;
+      .sc-user-select-select {
+        display: flex;
+        border: 1px solid #e4e7ed;
+        background: #fff;
+        .sc-user-select-tree {
+          width: 200px;
+          height: 345px;
+        }
+      }
+    }
+    .sc-user-select-toicon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 10px;
+      > i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ccc;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        border-radius: 50%;
+        color: #fff;
+      }
+    }
+    .sc-user-select-selected {
+      height: 345px;
+      width: 200px;
+      border: 1px solid #e4e7ed;
+      background: #fff;
+      header {
+        height: 43px;
+        line-height: 43px;
+        border-bottom: 1px solid #e4e7ed;
+        padding: 0 15px;
+        font-size: 12px;
+      }
+    }
+  }
 }

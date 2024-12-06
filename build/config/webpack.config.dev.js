@@ -13,14 +13,14 @@ const webpackConfig = {
   target: "web",
   devtool: project.compiler_devtool,
   resolve: {
-    extensions: [".js", ".jsx", ".json"],
+    extensions: [".js", ".jsx", ".json", ".mjs"],
     alias: Object.assign(project.compiler_vendors, {
       "@": project.paths.client(),
     }),
   },
   entry: {
     app: [APP_ENTRY].concat(
-      `webpack-hot-middleware/client?path=${project.compiler_public_path}__webpack_hmr`
+      `webpack-hot-middleware/client?path=${project.compiler_public_path}__webpack_hmr`,
     ),
   },
   output: {
@@ -36,6 +36,7 @@ const webpackConfig = {
     "react/lib/ExecutionEnvironment": true,
     "react/lib/ReactContext": true,
     "react/addons": true,
+    fs: require("fs"),
   },
   module: {
     noParse: [/hymapgl-test/],

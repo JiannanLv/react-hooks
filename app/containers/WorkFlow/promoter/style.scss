@@ -1,0 +1,26 @@
+.promoter-drawer {
+  .node-wrap-drawer-title {
+    label {
+      cursor: pointer;
+      span {
+        font-size: 14px;
+        vertical-align: middle;
+      }
+      .node-wrap-drawer-title-edit {
+        color: #409eff;
+        margin-left: 8px;
+        vertical-align: middle;
+      }
+      &:hover {
+        border-bottom: 1px dashed #409eff;
+      }
+    }
+  }
+  .ant-layout-footer {
+    background: transparent;
+    padding: 8px 16px 0 0;
+    .ant-btn {
+      margin-right: 8px;
+    }
+  }
+}

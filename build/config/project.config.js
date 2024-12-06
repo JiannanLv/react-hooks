@@ -46,29 +46,29 @@ const config = {
   compiler_vendors: {
     echarts: path.join(
       process.cwd(),
-      "node_modules/echarts/dist/echarts.min.js"
+      "node_modules/echarts/dist/echarts.min.js",
     ),
     // d3: path.join(process.cwd(), "node_modules/d3/dist/d3.min.js"),
     react: path.join(
       process.cwd(),
-      "node_modules/react/cjs/react.production.min.js"
+      "node_modules/react/cjs/react.production.min.js",
     ),
     "react-dom": path.join(
       process.cwd(),
-      "node_modules/react-dom/cjs/react-dom.production.min.js"
+      "node_modules/react-dom/cjs/react-dom.production.min.js",
     ),
     "react-redux": path.join(
       process.cwd(),
-      "node_modules/react-redux/dist/react-redux.min.js"
+      "node_modules/react-redux/dist/react-redux.min.js",
     ),
     "react-router-dom": path.join(
       process.cwd(),
-      "node_modules/react-router-dom/umd/react-router-dom.min.js"
+      "node_modules/react-router-dom/umd/react-router-dom.min.js",
     ),
     redux: path.join(process.cwd(), "node_modules/redux/dist/redux.min.js"),
     "seamless-immutable": path.join(
       process.cwd(),
-      "node_modules/seamless-immutable/seamless-immutable.production.min.js"
+      "node_modules/seamless-immutable/seamless-immutable.production.min.js",
     ),
   },
 };

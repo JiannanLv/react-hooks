@@ -3,9 +3,6 @@ import React from "react";
 // components
 import AddNode from "../addNode";
 
-// css
-import "./style.scss";
-
 const Approver = (props) => {
   const toText = (nodeConfig) => {
     if (nodeConfig.setType == 1) {

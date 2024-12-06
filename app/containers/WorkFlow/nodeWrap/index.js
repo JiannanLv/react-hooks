@@ -6,9 +6,6 @@ import Promoter from "../promoter";
 import Branch from "../branch";
 import Send from "../send";
 
-// css
-import "./style.scss";
-
 const NodeWrap = (props) => {
   const [nodeConfig, updateNodeConfig] = useState(props.nodeConfig);
   console.log(nodeConfig, "nodeConfig-node-wrap");

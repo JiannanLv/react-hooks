@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef } from "react";
+
+// context
+import Context from "./context";
 
 // components
 import NodeWrap from "./nodeWrap";
@@ -9,23 +12,24 @@ import "./style.scss";
 
 const WorkFlow = (props) => {
   console.log(props, "props-sc-work-flow");
+  const useSelectRef = useRef(null);
   const [nodeConfig, updateNodeConfig] = useState(props.data || {});
-
-  // useEffect(() => {
-  //   console.log(props.data, "props.data");
-  //   updateNodeConfig(props.data);
-  // }, [props]);
+  const handleSelectRole = (type, data) => {
+    useSelectRef.current.show(type, data);
+  };
   console.log(nodeConfig, "sc-work-flow-node-config");
   return (
     <div className="workflow-design">
       <div className="workflow-design-box-scale">
-        <NodeWrap nodeConfig={nodeConfig} />
+        <Context.Provider value={{ select: handleSelectRole }}>
+          <NodeWrap nodeConfig={nodeConfig} />
+        </Context.Provider>
         <div class="end-node">
           <div class="end-node-circle"></div>
           <div class="end-node-text">流程结束</div>
         </div>
       </div>
-      <UseSelect />
+      <UseSelect ref={useSelectRef} />
     </div>
   );
 };
